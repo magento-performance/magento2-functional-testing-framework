@@ -28,7 +28,7 @@ if (!empty($_POST['token']) && !empty($_POST['command'])) {
         $valid = validateCommand($magentoBinary, $command);
         if ($valid) {
             exec(
-                escapeCommand($magentoBinary . " $command" . " $arguments") . " 2>&1",
+                escapeCommand($magentoBinary . " $command" . " $arguments") . " > /dev/null 2>&1",
                 $output,
                 $exitCode
             );
